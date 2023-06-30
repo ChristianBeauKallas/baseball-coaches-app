@@ -1,4 +1,4 @@
-import pool from "../db/index.js";
+import pool from "./index.js";
 
 const executeQuery = (query, values) => {
   return new Promise((resolve, reject) => {

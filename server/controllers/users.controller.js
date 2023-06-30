@@ -9,18 +9,18 @@ const getUserById = async (id) => {
 };
 
 const createUser = async (user) => {
-    return executeQuery('INSERT INTO users (firstName, lastName, email) VALUES (?, ?, ?)', [user.firstName, user.lastName, user.email]);
+    return executeQuery('INSERT INTO users (firstName, lastName, teamName, role, username, password, phone) VALUES (?, ?, ?, ?, ?, ?, ?)', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.password, user.phone]);
 };
 
 const updateUser = async (id, user) => {
-    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, email = ? WHERE id = ?', [user.firstName, user.lastName, user.email, id]);
+    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, teamName = ?, role = ?, username = ?, password = ?, phone = ? WHERE id = ?', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.password, user.phone, id]);
 };
 
 const deleteUser = async (id) => {
     return executeQuery('DELETE FROM users WHERE id = ?', [id]);
 };
 
-export default {
+export { 
     getAllUsers,
     getUserById,
     createUser,
