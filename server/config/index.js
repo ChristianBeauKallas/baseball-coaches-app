@@ -1,17 +1,15 @@
-import dotenv from 'dotenv';
+require('dotenv').config();
 
-const envFound = dotenv.config();
+const mysqlConfig = {
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.DB_SCHEMA,
+};
 
-if (!envFound) {
-    throw new Error("Couldn't find .env!");
-}
+const port = parseInt(process.env.PORT);
 
-export default {
-    mysql: {
-        host: process.env.DB_HOST,
-        user: process.env.DB_USER,
-        password: process.env.DB_PASS,
-        database: process.env.DB_SCHEMA,
-    },
-    port: parseInt(process.env.PORT),
+module.exports = {
+    mysql: mysqlConfig,
+    port: port,
 };

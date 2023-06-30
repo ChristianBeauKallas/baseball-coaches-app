@@ -1,5 +1,5 @@
-import mysql from 'mysql2';
-import config from '../config/index.js';
+const mysql = require('mysql2');
+const config = require('../config');
 
 const pool = mysql.createPool(config.mysql);
 
@@ -12,4 +12,4 @@ pool.getConnection((err, connection) => {
     }
 });
 
-export default pool;
+module.exports = pool;

@@ -1,4 +1,4 @@
-import pool from "./index.js";
+const pool = require('./index');
 
 const executeQuery = (query, values) => {
   return new Promise((resolve, reject) => {
@@ -12,4 +12,5 @@ const executeQuery = (query, values) => {
   });
 };
 
-export default executeQuery;
+module.exports = executeQuery;
+
