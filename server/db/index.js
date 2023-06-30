@@ -1,9 +1,9 @@
-const mysql = require('mysql2');
-const config = require('../config');
+const mysql = require("mysql2")
+const config = require("../config")
 
-const pool = mysql.createPool(config.mysql);
+const connection = mysql.createPool(config.mysql);
 
-pool.getConnection((err, connection) => {
+connection.getConnection((err, connection) => {
     if (err) {
         console.error('Error connecting to the database:', err);
     } else {
@@ -12,4 +12,4 @@ pool.getConnection((err, connection) => {
     }
 });
 
-module.exports = pool;
+module.exports = connection;
