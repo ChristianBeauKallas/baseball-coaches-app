@@ -1,8 +1,8 @@
-import express from 'express';
-import config from './config/index.js';
-import router from './routes/index.js';
-import cors from 'cors';
-import dotenv from 'dotenv';
+const express = require('express');
+const config = require('./config');
+const router = require('./routes');
+const cors = require('cors');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -20,3 +20,4 @@ app.use((err, req, res, next) => {
 app.listen(config.port, () => {
     console.log(`Server listening on port ${config.port}...`);
 });
+
