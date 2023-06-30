@@ -1,6 +1,6 @@
 const express = require('express');
-const config = require('./config');
-const router = require('./routes');
+const config = require('./config/index.js');
+const router = require('./routes/index.js');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
