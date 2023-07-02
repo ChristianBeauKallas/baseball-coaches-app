@@ -1,12 +1,15 @@
 import React from 'react';
-import HomePage from './Components/Homepage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { LandingPage } from './Pages/LandingPage';
 
 function App() {
   return (
-    <div>
-      <HomePage />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" component={LandingPage} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
