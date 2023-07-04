@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './TagLineBox.css';
-import PlaceHolder from '../Assets/Photos/TagLinePicPlaceHolder.png';
+import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
 
 const TagLineBox = () => {
   return (
@@ -20,7 +21,7 @@ const TagLineBox = () => {
         </ul>
       </div>
       <div className='buttonDiv'>
-        <button className='getStarted'> Get Started For Free </button>
+        <Link to="/create-account" className='getStarted'>Get Started For Free</Link>
       </div>
     </div>
   );

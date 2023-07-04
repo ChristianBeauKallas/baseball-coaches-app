@@ -1,4 +1,6 @@
-const executeQuery = require("../db/utils.js")
+const executeQuery = require('../db/utils.js')
+const bcrypt = require('bcrypt');
+const { isStrongPassword } = require('../helpers/users.helpers.js')
 
 const getAllUsers = async () => {
   return executeQuery('SELECT * FROM users')
@@ -8,16 +10,42 @@ const getUserById = async (id) => {
     return executeQuery('SELECT * FROM users WHERE id = ?', [id])
 };
 
-const createUser = async (user) => {
-    return executeQuery('INSERT INTO users (firstName, lastName, teamName, role, username, password, phone) VALUES (?, ?, ?, ?, ?, ?, ?)', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.password, user.phone])
-};
+const registerUser = async (user) => {
+    // validate the password strength
+    if (!isStrongPassword(user.password)) {
+      throw new Error('Password is not strong enough');
+    }
+  
+    // hash password before storing
+    const salt = await bcrypt.genSalt(10);
+    const passwordHash = await bcrypt.hash(user.password, salt);
+  
+    return executeQuery('INSERT INTO users (firstName, lastName, teamName, role, username, phone, passwordHash) VALUES (?, ?, ?, ?, ?, ?, ?)', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.phone, passwordHash]);
+  };
 
 const updateUser = async (id, user) => {
-    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, teamName = ?, role = ?, username = ?, password = ?, phone = ? WHERE id = ?', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.password, user.phone, id])
+    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, teamName = ?, role = ?, username = ?, phone = ? WHERE id = ?', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.phone, id])
 };
 
 const deleteUser = async (id) => {
     return executeQuery('DELETE FROM users WHERE id = ?', [id])
 };
 
-module.exports = { getAllUsers, getUserById, createUser, updateUser, deleteUser }
+const loginUser = (req, res) => {
+    // Logic for user login
+};
+
+const logoutUser = (req, res) => {
+    // Logic for user logout
+};
+
+
+module.exports = { getAllUsers, 
+                    getUserById, 
+                    registerUser, 
+                    updateUser, 
+                    deleteUser,
+                    registerUser,
+                    loginUser,
+                    logoutUser,
+                }
