@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import NavBar from '../Components/NavBar';
-import { TextField, Button } from '@mui/material';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import '../Components/CreateAccount.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -75,12 +75,30 @@ function CreateAccount() {
         <TextField name="firstName" label="First Name" variant="outlined" value={formData.firstName} onChange={handleChange} fullWidth />
         <TextField name="lastName" label="Last Name" variant="outlined" value={formData.lastName} onChange={handleChange} fullWidth />
         <TextField name="teamName" label="Team Name" variant="outlined" value={formData.teamName} onChange={handleChange} fullWidth />
-        <TextField name="role" label="Role" variant="outlined" value={formData.role} onChange={handleChange} fullWidth />
+        <FormControl fullWidth>
+          <InputLabel id="roleLabel">Role</InputLabel>
+          <Select
+            name="role"
+            labelId="role-label"
+            value={formData.role}
+            onChange={handleChange}
+            variant="outlined"
+            className='customInput'
+          >
+            <MenuItem value="Head Coach">Head Coach</MenuItem>
+            <MenuItem value="Assistant Coach">Assistant Coach</MenuItem>
+            <MenuItem value="Athletic Director">Athletic Director</MenuItem>
+            <MenuItem value="Player">Player</MenuItem>
+            <MenuItem value="Parent">Parent</MenuItem>
+            <MenuItem value="Other">Other</MenuItem>
+          </Select>
+        </FormControl>
         <TextField name="username" label="User Name" variant="outlined" value={formData.username} onChange={handleChange} fullWidth />
         <TextField name="password" label="Password" variant="outlined" type="password" value={formData.password} onChange={handleChange} fullWidth />
         <TextField name="phone" label="Phone" variant="outlined" value={formData.phone} onChange={handleChange} fullWidth />
-        <Button type="submit" variant="contained" color="primary">Create Account</Button>
+        <Button type="submit" variant="contained" color="primary" className='submitButton'>Create Account</Button>
       </form>
+      {isCreated && <p>Account Created Successfully!</p>}
     </div>
   );
 }
