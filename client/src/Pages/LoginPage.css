@@ -1,0 +1,14 @@
+.loginTitle {
+    color: #025464;
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px;
+    font-family: 'Inter', sans-serif;
+}
+
+.resetDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}

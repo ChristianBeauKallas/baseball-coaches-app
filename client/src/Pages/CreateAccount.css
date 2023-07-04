@@ -1,0 +1,55 @@
+.createAccountTitle {
+  color: #025464;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 900px;
+  font-family: 'Inter', sans-serif;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.loginForm .MuiTextField-root, 
+.loginForm .MuiFormControl-root { /* <- Add this rule to match the FormControl's width to the TextField's */
+  margin-bottom: 10px;
+  width: 50%; /* Adjust the width to your desired value, such as 50% */
+}
+
+.loginForm .MuiButton-root {
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  color: white;
+  background-color: #025464;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.loginForm .MuiButton-root:hover {
+  background-color: #01374a;
+}
+
+.MuiInputBase-input {
+  font-family: 'Inter', sans-serif;
+}
+
+.loginForm .MuiInputLabel-root {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+}
+
+.loginForm .filled {
+  background-color: #E7F0FE; /* light blue */
+}
+
+.passwordCriteria {
+  font-style: italic;
+  /* Add more styles if needed */
+}

@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try {
-        const { username, password} = req.body;
+        const { firstName, lastName, teamName, role, username, email, password, phone } = req.body;
 
         // check if username is taken
         const usernameTaken = await isUsernameTaken(username);
@@ -51,7 +51,7 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ error: 'Password is not strong enough' });
         }
 
-        await registerUser({ username, password });
+        await registerUser({ firstName, lastName, teamName, role, username, email, password, phone });
         res.status(201).json({ message: 'User created successfully' });
     } catch (error) {
         console.error('Error creating user:', error);
@@ -64,6 +64,7 @@ router.post('/register', async (req, res) => {
         }
     }
 });
+
 
 router.post ('/login', async (req, res) => {
     const { username, password } = req.body;

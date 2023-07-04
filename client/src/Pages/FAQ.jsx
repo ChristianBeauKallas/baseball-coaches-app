@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import NavBar from '../Components/NavBar';
-import '../Components/FAQ.css';
+import './FAQ.css';
 
 function FAQ () {
     return (

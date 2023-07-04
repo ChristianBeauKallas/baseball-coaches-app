@@ -10,7 +10,7 @@ const getUserById = async (id) => {
     return executeQuery('SELECT * FROM users WHERE id = ?', [id])
 };
 
-const registerUser = async ({ firstName, lastName, teamName, role, username, password, phone }) => {
+const registerUser = async ({ firstName, lastName, teamName, role, username, email, password, phone }) => {
     // validate the password strength
     if (!isStrongPassword(password)) {
       throw new Error('Password is not strong enough');
@@ -20,12 +20,12 @@ const registerUser = async ({ firstName, lastName, teamName, role, username, pas
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
   
-    return executeQuery('INSERT INTO users (firstName, lastName, teamName, role, username, phone, passwordHash) VALUES (?, ?, ?, ?, ?, ?, ?)', [firstName, lastName, teamName, role, username, phone, passwordHash]);
+    return executeQuery('INSERT INTO users (firstName, lastName, teamName, role, username, email, phone, passwordHash) VALUES (?, ?, ?, ?, ?, ?, ?, ?)', [firstName, lastName, teamName, role, username, email, phone, passwordHash]);
   };
   
 
 const updateUser = async (id, user) => {
-    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, teamName = ?, role = ?, username = ?, phone = ? WHERE id = ?', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.phone, id])
+    return executeQuery('UPDATE users SET firstName = ?, lastName = ?, teamName = ?, role = ?, username = ?, email = ?, phone = ? WHERE id = ?', [user.firstName, user.lastName, user.teamName, user.role, user.username, user.email, user.phone, id])
 };
 
 const deleteUser = async (id) => {

@@ -13,7 +13,7 @@ const Navbar = () => {
                 <Button color="inherit" component={Link} to="/faq" sx={{ mr: 1 }}>
                 FAQ
                 </Button>
-                <Button color="inherit" component={Link} to="/my-account" sx={{ mr: 1 }}>Login</Button>
+                <Button color="inherit" component={Link} to="/login" sx={{ mr: 1 }}>Login</Button>
             </Toolbar>
         </AppBar>
     );
