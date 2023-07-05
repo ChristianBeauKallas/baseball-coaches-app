@@ -47,6 +47,4 @@ module.exports = { getAllUsers,
                     updateUser, 
                     deleteUser,
                     registerUser,
-                    loginUser,
-                    logoutUser,
                 }

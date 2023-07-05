@@ -18,9 +18,10 @@ const TagLineBox = () => {
           <li>Collaborative Coaching</li>
           <li>Time Saving Templates</li>
           <li>Data Driven Insights</li>
+          
         </ul>
       </div>
-      <div className='buttonDiv'>
+      <div className='tagButtonDiv'>
         <Link to="/create-account" className='getStarted'>Get Started For Free</Link>
       </div>
     </div>

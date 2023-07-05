@@ -1,12 +1,12 @@
 import React from 'react';
 import TagLineBox from '../Components/TagLineBox';
 
-const LandingPage = () => {
+function LandingPage() {
     return (
         <div>
-        <TagLineBox />
+            <TagLineBox />
         </div>
     );
-};
+}
 
 export default LandingPage;

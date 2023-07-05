@@ -31,10 +31,11 @@ function MyAccount() {
                 >
                     <ToggleButton value="myAccount">My Dashboard</ToggleButton>
                     <ToggleButton value="browseGamePlans">Browse</ToggleButton>
+                    <ToggleButton value="createResource">Create Resource +</ToggleButton>
                 </ToggleButtonGroup>
             </div>
             <div className='buttonDiv'>
-                <Link to="/create-account" className='createNewButton'>Create New</Link>
+                <Link to="" className='createNewButton'>Create New</Link>
             </div>  
             <div className='practicePlanHeader'>
                 <h1>Your Practice Plans</h1>

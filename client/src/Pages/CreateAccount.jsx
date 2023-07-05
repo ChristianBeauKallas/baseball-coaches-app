@@ -17,7 +17,7 @@ function CreateAccount() {
   });
 
   const [isCreated, setIsCreated] = useState(false);
-  const [openSnackbar, setOpenSnackbar] = useState(false); // New State for Snackbar
+  const [openSnackbar, setOpenSnackbar] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -58,7 +58,7 @@ function CreateAccount() {
       console.log(data);
       localStorage.setItem('user', JSON.stringify(data));
       setIsCreated(true);
-      setOpenSnackbar(true); // Open the Snackbar
+      setOpenSnackbar(true);
       setTimeout(() => {
         navigate('/login');
       }, 4000);
