@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import NavBar from '../Components/NavBar';
 import './FAQ.css';
 
 function FAQ () {
     return (
         <div>
-            <NavBar />
             <h1 className='faqTitle'>Frequently Asked Questions</h1>
             <div className='tableDiv'>
                 <table className='faqTable'>

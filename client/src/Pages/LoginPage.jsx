@@ -1,23 +1,22 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // <-- Update this line
-import NavBar from '../Components/NavBar';
+import { useNavigate } from 'react-router-dom'; 
 import './LoginPage.css';
 import { Button, TextField, Link } from '@mui/material';
 
-function LoginPage () {
+function LoginPage ({ onLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
     // Get the navigate function
-    const navigate = useNavigate(); // <-- Update this line
+    const navigate = useNavigate(); 
 
     const handleUsernameChange = (e) => setUsername(e.target.value);
     const handlePasswordChange = (e) => setPassword(e.target.value);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Clear previous error
+        
         setError(null);
 
         fetch('http://localhost:5001/api/users/login', {
@@ -37,10 +36,13 @@ function LoginPage () {
             return response.json();
         })
         .then(data => {
+            localStorage.setItem('user', 'true'); // save user info in local storage
             console.log(data);
-            // Redirect user to the my-account page
-            navigate('/my-account'); // <-- Update this line
-        })
+            onLogin(data.user);
+            setTimeout(() => {
+                navigate('/my-account');
+              }, 1000);
+          }) 
         .catch(error => {
             console.error('Error:', error);
             setError('Login failed. Please check your username and password.');
@@ -49,7 +51,6 @@ function LoginPage () {
 
     return (
         <div>
-            <NavBar />
             <h1 className='loginTitle'>Account Log In</h1>
             <form onSubmit={handleSubmit} className='loginForm'>
                 <TextField
@@ -67,7 +68,7 @@ function LoginPage () {
                     onChange={handlePasswordChange}
                     required
                 />
-                <Button type="submit" variant="contained">Submit</Button>
+                <Button type="submit" variant="contained">Login</Button>
             </form>
             {error && <p>{error}</p>}
             <div className='resetDiv'>

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { useNavigate, useLocation, Link } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import './MyAccount.css';
+import './BrowseGamePlans.css';
 import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
 
-function MyAccount() {
+function BrowseGamePlans() {
     const navigate = useNavigate();
     const [alignment, setAlignment] = useState(
         useLocation().pathname === '/my-account' ? 'myAccount' : 'browseGamePlans'
@@ -33,11 +33,8 @@ function MyAccount() {
                     <ToggleButton value="browseGamePlans">Browse</ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <div className='buttonDiv'>
-                <Link to="/create-account" className='createNewButton'>Create New</Link>
-            </div>  
             <div className='practicePlanHeader'>
-                <h1>Your Practice Plans</h1>
+                <h1>Most Downloaded This Week</h1>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />
@@ -46,7 +43,7 @@ function MyAccount() {
                 <img src={PlaceHolder} alt="PlaceHolder" />
             </div>   
             <div className='practicePlanHeader'>
-                <h1>Your Hitting Charts</h1>
+                <h1>Practice Plans</h1>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />
@@ -55,16 +52,16 @@ function MyAccount() {
                 <img src={PlaceHolder} alt="PlaceHolder" />
             </div>
             <div className='practicePlanHeader'>
-                <h1>Your Pitching Charts</h1>
+                <h1>Pitching Charts</h1>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />
                 <img src={PlaceHolder} alt="PlaceHolder" />
                 <img src={PlaceHolder} alt="PlaceHolder" />
                 <img src={PlaceHolder} alt="PlaceHolder" />
-            </div>  
+            </div> 
         </div>
     );
 }
 
-export default MyAccount;
+export default BrowseGamePlans;

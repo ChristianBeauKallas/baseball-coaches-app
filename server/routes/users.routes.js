@@ -38,7 +38,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/register', async (req, res) => {
     try {
-        const { firstName, lastName, teamName, role, username, email, password, phone } = req.body;
+        const user = req.body;
 
         // check if username is taken
         const usernameTaken = await isUsernameTaken(username);

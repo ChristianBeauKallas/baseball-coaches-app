@@ -32,13 +32,13 @@ const deleteUser = async (id) => {
     return executeQuery('DELETE FROM users WHERE id = ?', [id])
 };
 
-const loginUser = (req, res) => {
-    // Logic for user login
-};
+// const loginUser = (req, res) => {
+//     // Logic for user login
+// };
 
-const logoutUser = (req, res) => {
-    // Logic for user logout
-};
+// const logoutUser = (req, res) => {
+//     // Logic for user logout
+// };
 
 
 module.exports = { getAllUsers, 

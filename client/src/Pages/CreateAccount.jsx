@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import NavBar from '../Components/NavBar';
-import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel, Snackbar } from '@mui/material';
+import Alert from '@mui/material/Alert';
 import './CreateAccount.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,12 +10,14 @@ function CreateAccount() {
     lastName: '',
     teamName: '',
     role: '',
+    email: '',
     username: '',
     password: '',
     phone: '',
   });
 
   const [isCreated, setIsCreated] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false); // New State for Snackbar
   const navigate = useNavigate();
 
   const handleChange = (event) => {
@@ -28,7 +30,7 @@ function CreateAccount() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const requiredFields = ['firstName', 'lastName', 'teamName', 'role', 'username', 'password'];
+    const requiredFields = ['firstName', 'lastName', 'teamName', 'role', 'email', 'username', 'password']; 
     const hasAllFields = requiredFields.every((field) => formData[field]);
 
     if (!hasAllFields) {
@@ -56,10 +58,10 @@ function CreateAccount() {
       console.log(data);
       localStorage.setItem('user', JSON.stringify(data));
       setIsCreated(true);
-      // If you want a delay before redirecting, you can use setTimeout
+      setOpenSnackbar(true); // Open the Snackbar
       setTimeout(() => {
-        navigate('/my-account');
-      }, 2000); // 2 seconds delay
+        navigate('/login');
+      }, 4000);
     } else {
       setIsCreated(false);
     }
@@ -67,7 +69,7 @@ function CreateAccount() {
 
   return (
     <div>
-      <NavBar />
+
       <div className="createAccountTitle">
         <h1>Create Account</h1>
       </div>
@@ -76,33 +78,37 @@ function CreateAccount() {
         <TextField name="lastName" label="Last Name" variant="outlined" value={formData.lastName} onChange={handleChange} fullWidth />
         <TextField name="teamName" label="Team Name" variant="outlined" value={formData.teamName} onChange={handleChange} fullWidth />
         <FormControl fullWidth>
-  <InputLabel id="roleLabel">Role</InputLabel>
-  <Select
-    name="role"
-    labelId="role-label"
-    value={formData.role}
-    onChange={handleChange}
-    variant="outlined"
-    className={`customInput ${formData.role ? 'filled' : ''}`} // update here
-  >
-    <MenuItem value="Head Coach">Head Coach</MenuItem>
-    <MenuItem value="Assistant Coach">Assistant Coach</MenuItem>
-    <MenuItem value="Athletic Director">Athletic Director</MenuItem>
-    <MenuItem value="Player">Player</MenuItem>
-    <MenuItem value="Parent">Parent</MenuItem>
-    <MenuItem value="Other">Other</MenuItem>
-  </Select>
-</FormControl>
-
+          <InputLabel id="roleLabel">Role</InputLabel>
+          <Select
+            name="role"
+            labelId="role-label"
+            value={formData.role}
+            onChange={handleChange}
+            variant="outlined"
+            className={`customInput ${formData.role ? 'filled' : ''}`} 
+          >
+            <MenuItem value="Head Coach">Head Coach</MenuItem>
+            <MenuItem value="Assistant Coach">Assistant Coach</MenuItem>
+            <MenuItem value="Athletic Director">Athletic Director</MenuItem>
+            <MenuItem value="Player">Player</MenuItem>
+            <MenuItem value="Parent">Parent</MenuItem>
+            <MenuItem value="Other">Other</MenuItem>
+          </Select>
+        </FormControl>
+        <TextField name="email" label="Email" variant="outlined" value={formData.email} onChange={handleChange} fullWidth />  
         <TextField name="username" label="User Name" variant="outlined" value={formData.username} onChange={handleChange} fullWidth />
         <TextField name="password" label="Password" variant="outlined" value={formData.password} onChange={handleChange} fullWidth />
         <p className="passwordCriteria">
-        *Must be at least 8 characters long & include 1 uppercase, 1 lower case, 1 number and 1 special character
+          *Must be at least 8 characters long & include 1 uppercase, 1 lower case, 1 number and 1 special character
         </p>
         <TextField name="phone" label="Phone" variant="outlined" value={formData.phone} onChange={handleChange} fullWidth />
         <Button type="submit" variant="contained" color="primary" className='submitButton'>Create Account</Button>
       </form>
-      {isCreated && <p>Account Created Successfully!</p>}
+      <Snackbar open={openSnackbar} autoHideDuration={6000} onClose={() => setOpenSnackbar(false)} anchorOrigin={{ vertical:'center', horizontal: 'center'}}>
+        <Alert onClose={() => setOpenSnackbar(false)} severity="success" sx={{ width: '100%' }}>
+          Account Successfully Created. We're navigating you to login!
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
