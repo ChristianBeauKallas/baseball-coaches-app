@@ -1,9 +1,8 @@
 body {
-    background-color: #F8F1F1;
+    background-color:#EFFAFD;
 }
 
 .pageTagLine {
-    color: #025464;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -14,15 +13,19 @@ body {
 
 h1 {
     font-size: 55px;
+    font-weight: 900;
+    color: #EE4E34;
 }
 
 h2 {
+    color: #232B2B;
+    font-weight: 700;
     margin-top: -15px;
     font-size: 25px;
 }
 
 .mainFeatures {
-    color:#025464;
+    color:#232B2B;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -50,7 +53,7 @@ li {
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: white;
-    background-color: #025464;
+    background-color: #EE4E34;
     border: none;
     padding: 15px 25px;
     border-radius: 10px;

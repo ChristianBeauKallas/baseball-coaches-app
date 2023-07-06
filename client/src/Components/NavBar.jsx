@@ -27,40 +27,42 @@ function Navbar({ isLogged, handleLogout }) {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#025464' }}>
-      <Toolbar>
-        <Typography variant="h6" component={Link} sx={{ flexGrow: 1 }}>
-          <Link to={isLoggedIn ? "/my-account" : "/"} className="gamePlanLink">The Game Plan</Link>
-        </Typography>
-        <Button color="inherit" component={Link} to="/faq" sx={{ mr: 1 }}>
-          FAQ
+    <AppBar position="static" sx={{ backgroundColor: '#252525' }}>
+  <Toolbar>
+    <Typography variant="h6" component={Link} sx={{ flexGrow: 1, fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>
+      <Link to={isLoggedIn ? "/my-account" : "/"} className="gamePlanLink">Game Plan</Link>
+    </Typography>
+    <Button color="inherit" component={Link} to="/faq" sx={{ mr: 1, fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>
+      FAQ
+    </Button>
+    {isLoggedIn ? (
+      <div>
+        <Button
+          color="inherit"
+          aria-controls="simple-menu"
+          aria-haspopup="true"
+          onClick={handleMenu}
+          sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}
+        >
+          My Account
         </Button>
-        {isLoggedIn ? (
-          <div>
-            <Button
-              color="inherit"
-              aria-controls="simple-menu"
-              aria-haspopup="true"
-              onClick={handleMenu}
-            >
-              My Account
-            </Button>
-            <Menu
-              id="simple-menu"
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-            <MenuItem onClick={handleClose} component={Link} to="/my-dashboard">My Dashboard</MenuItem>
-              <MenuItem onClick={logout}>Logout</MenuItem>
-            </Menu>
-          </div>
-        ) : (
-          <Button color="inherit" component={Link} to="/login" sx={{ mr: 1 }}>Login</Button>
-        )}
-      </Toolbar>
-    </AppBar>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+        <MenuItem onClick={handleClose} component={Link} to="/my-dashboard" sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>My Dashboard</MenuItem>
+          <MenuItem onClick={logout} sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>Logout</MenuItem>
+        </Menu>
+      </div>
+    ) : (
+      <Button color="inherit" component={Link} to="/login" sx={{ mr: 1, fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>Login</Button>
+    )}
+  </Toolbar>
+</AppBar>
+
   );
 }
 

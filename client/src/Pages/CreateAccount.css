@@ -23,7 +23,7 @@
   font-family: 'Inter', sans-serif;
   text-decoration: none;
   color: white;
-  background-color: #025464;
+  background-color: #EE4E34;
   border: none;
   padding: 15px 25px;
   border-radius: 5px;
@@ -33,7 +33,7 @@
 }
 
 .loginForm .MuiButton-root:hover {
-  background-color: #01374a;
+  background-color: black;
 }
 
 .MuiInputBase-input {
