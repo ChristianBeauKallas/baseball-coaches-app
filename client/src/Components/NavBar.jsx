@@ -30,7 +30,7 @@ function Navbar({ isLogged, handleLogout }) {
     <AppBar position="static" sx={{ backgroundColor: '#025464' }}>
       <Toolbar>
         <Typography variant="h6" component={Link} sx={{ flexGrow: 1 }}>
-          <Link to={isLoggedIn ? "/my-account" : "/"} className="gamePlanLink">Game Plan</Link>
+          <Link to={isLoggedIn ? "/my-account" : "/"} className="gamePlanLink">The Game Plan</Link>
         </Typography>
         <Button color="inherit" component={Link} to="/faq" sx={{ mr: 1 }}>
           FAQ

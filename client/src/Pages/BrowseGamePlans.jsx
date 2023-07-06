@@ -31,10 +31,11 @@ function BrowseGamePlans() {
                 >
                     <ToggleButton value="myAccount">My Dashboard</ToggleButton>
                     <ToggleButton value="browseGamePlans">Browse</ToggleButton>
+                    <ToggleButton value="createResource">Create Resource +</ToggleButton>
                 </ToggleButtonGroup>
             </div>
             <div className='practicePlanHeader'>
-                <h1>Most Downloaded This Week</h1>
+                <h1>Most Downloaded</h1>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />

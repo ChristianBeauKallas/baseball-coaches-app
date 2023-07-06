@@ -34,9 +34,9 @@ function MyAccount() {
                     <ToggleButton value="createResource">Create Resource +</ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <div className='buttonDiv'>
+            {/* <div className='buttonDiv'>
                 <Link to="" className='createNewButton'>Create New</Link>
-            </div>  
+            </div>   */}
             <div className='practicePlanHeader'>
                 <h1>Your Practice Plans</h1>
             </div> 
