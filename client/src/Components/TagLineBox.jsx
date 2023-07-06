@@ -7,7 +7,7 @@ const TagLineBox = () => {
   return (
     <div>
       <div className='pageTagLine'>
-        <h1>Less Time In The Office. More Time On The Field</h1>
+        <h1>Less Time In The Office. <br></br>More Time On The Field</h1>
         <h2>Our Automated Tools Make Practice & Game Planning Easy</h2>
       </div>
       <div className='mainFeatures'>
