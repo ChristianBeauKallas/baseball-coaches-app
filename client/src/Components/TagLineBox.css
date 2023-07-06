@@ -12,13 +12,14 @@ body {
 }
 
 h1 {
+    margin-top: -01;
     font-size: 55px;
     font-weight: 900;
-    color: #EE4E34;
+    color: #232B2B;
 }
 
 h2 {
-    color: #232B2B;
+    color: #EE4E34;
     font-weight: 700;
     margin-top: -15px;
     font-size: 25px;
@@ -35,7 +36,7 @@ h2 {
 }
 
 li {
-    font-size: 25px;
+    font-size: 22px;
     list-style: none;
     padding-top: 30px;
     text-align: center;
@@ -49,7 +50,7 @@ li {
     text-align: center;
 }
 
-.getStarted {
+.howItWorksBtn {
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: white;
@@ -60,4 +61,62 @@ li {
     font-size: 16px;
     cursor: pointer;
     justify-content: center;
+}
+
+.howItWorksContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    font-family: 'Inter', sans-serif;
+}
+
+.worksHeading {
+    font-size: 55px;
+    font-weight: 900;
+    color: #232B2B;
+}
+
+.mostDownloaded {
+    color:  #EE4E34;;
+    font-weight: 700;
+    margin-top: -15px;
+    font-size: 25px;
+}
+
+.getStartedButtonDiv{
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.mostDownloadedHeading{
+    color: #EE4E34;
+    font-weight: 700;
+    margin-top: -15px;
+    font-size: 25px;
+}
+
+.mostDownloadedPlans {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    padding-top: 15px;
+    max-width: 850px;
+    font-family: 'Inter', sans-serif;
+}
+
+.imgCaption {
+    font-size: 15px;
+    text-align: center;
+    color:#EE4E34;
 }

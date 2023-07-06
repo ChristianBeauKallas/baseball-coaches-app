@@ -1,0 +1,30 @@
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* This line centers items vertically */
+    background-color: #EE4E34;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    padding: 20px 0;
+}
+
+.footerColumn {
+    flex: 1;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.footerColumn h1, .footerColumn h2 {
+    margin-bottom: 15px;
+}
+
+.footerColumn a {
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.footerColumn a:hover {
+    color: #fff;
+}

@@ -27,7 +27,7 @@ function Navbar({ isLogged, handleLogout }) {
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: '#252525' }}>
+    <AppBar position="static" sx={{ backgroundColor: '#EE4E34' }}> 
   <Toolbar>
     <Typography variant="h6" component={Link} sx={{ flexGrow: 1, fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>
       <Link to={isLoggedIn ? "/my-account" : "/"} className="gamePlanLink">Game Plan</Link>
