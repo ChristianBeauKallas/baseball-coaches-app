@@ -1,6 +1,9 @@
 import React, { useRef } from 'react';
 import './TagLineBox.css';
 import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
+import practicePlanHolder from '../Assets/Photos/practicePlanHolder.png';
+import sheetsPractice from '../Assets/Photos/sheetsPlanHolder.png';
+
 
 function TagLineBox() {
   // Create a reference to the howItWorksContainer div
@@ -18,7 +21,7 @@ function TagLineBox() {
               <h2>Our Automated Tools Make Practice & Game Planning Easy</h2>
           </div>
           <div className='mainFeatures'>
-              <img src={PlaceHolder} alt="PlaceHolder" />
+              <img src={practicePlanHolder} alt="seuPlan1" />
               <ul>
                   <li>Streamlined Planning</li>
                   <li>Enhanced Performance</li>
@@ -38,15 +41,15 @@ function TagLineBox() {
             </div>
             <div className='mostDownloadedPlans'>
               <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={sheetsPractice} alt="PlaceHolder" />
                 <p className="imgCaption">Uploaded By @adinkel3</p>
               </div>
               <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={sheetsPractice} alt="PlaceHolder" />
                 <p className="imgCaption">Created By @CoachSheets3</p>
               </div>
               <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={sheetsPractice} alt="PlaceHolder" />
                 <p className="imgCaption">Uploaded By @CoachReel17</p>
               </div>
             </div>
