@@ -8,6 +8,7 @@ import MyAccount from './Pages/MyAccount';
 import FAQ from './Pages/FAQ';
 import NavBar from './Components/NavBar'; 
 import BrowseGamePlans from './Pages/BrowseGamePlans';
+import CreateNew from './Pages/CreatePlan'
 
 function App() {
   const [isLogged, setIsLogged] = useState(false); 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/my-account" element={<MyAccount />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/browse-game-plans" element={<BrowseGamePlans />} />
+        <Route path="/create-new" element={<CreateNew />} />
       </Routes>
     </BrowserRouter>
   );

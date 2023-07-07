@@ -1,0 +1,12 @@
+.toggleContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.createPlanHeadingContainer {
+    color: #232B2B;
+    display: flex;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}

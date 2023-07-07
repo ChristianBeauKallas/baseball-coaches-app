@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
@@ -7,16 +7,28 @@ import practicePlanHolder from '../Assets/Photos/practicePlanHolder.png';
 
 function MyAccount() {
     const navigate = useNavigate();
-    const [alignment, setAlignment] = useState(
-        useLocation().pathname === '/my-account' ? 'myAccount' : 'browseGamePlans'
-    );
+    const location = useLocation();
+    const [alignment, setAlignment] = useState('myAccount');
+
+    useEffect(() => {
+        const path = location.pathname;
+        if (path === '/my-account') {
+            setAlignment('myAccount');
+        } else if (path === '/browse-game-plans') {
+            setAlignment('browseGamePlans');
+        } else if (path === '/create-new') {
+            setAlignment('createResource');
+        }
+    }, [location]);
 
     function handleAlignment(event, newAlignment) {
         setAlignment(newAlignment);
         if (newAlignment === 'myAccount') {
             navigate('/my-account');
-        } else {
+        } else if (newAlignment === 'browseGamePlans') {
             navigate('/browse-game-plans');
+        } else if (newAlignment === 'createResource') {
+            navigate('/create-new');
         }
     }
 

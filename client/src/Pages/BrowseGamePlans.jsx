@@ -1,22 +1,34 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './BrowseGamePlans.css';
-import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
+import practicePlanHolder from '../Assets/Photos/practicePlanHolder.png';
 
 function BrowseGamePlans() {
     const navigate = useNavigate();
-    const [alignment, setAlignment] = useState(
-        useLocation().pathname === '/my-account' ? 'myAccount' : 'browseGamePlans'
-    );
+    const location = useLocation();
+    const [alignment, setAlignment] = useState('browseGamePlans');
+
+    useEffect(() => {
+        const path = location.pathname;
+        if (path === '/my-account') {
+            setAlignment('myAccount');
+        } else if (path === '/browse-game-plans') {
+            setAlignment('browseGamePlans');
+        } else if (path === '/create-new') {
+            setAlignment('createResource');
+        }
+    }, [location]);
 
     function handleAlignment(event, newAlignment) {
         setAlignment(newAlignment);
         if (newAlignment === 'myAccount') {
             navigate('/my-account');
-        } else {
+        } else if (newAlignment === 'browseGamePlans') {
             navigate('/browse-game-plans');
+        } else if (newAlignment === 'createResource') {
+            navigate('/create-new');
         }
     }
 
@@ -39,30 +51,30 @@ function BrowseGamePlans() {
                 <button className='seeAllButton'>See All</button>
             </div> 
             <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div>   
             <div className='practicePlanHeaders'>
                 <h1>Practice Plans</h1>
                 <button className='seeAllButton'>See All</button>
             </div> 
             <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div>
             <div className='practicePlanHeaders'>
                 <h1>Pitching Charts</h1>
                 <button className='seeAllButton'>See All</button>
             </div> 
             <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div> 
         </div>
     );
