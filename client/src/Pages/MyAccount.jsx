@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './MyAccount.css';
-import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
+import practicePlanHolder from '../Assets/Photos/practicePlanHolder.png';
 
 function MyAccount() {
     const navigate = useNavigate();
@@ -34,35 +34,35 @@ function MyAccount() {
                     <ToggleButton value="createResource">Create Resource +</ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            {/* <div className='buttonDiv'>
-                <Link to="" className='createNewButton'>Create New</Link>
-            </div>   */}
             <div className='practicePlanHeader'>
                 <h1>Your Practice Plans</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
-            <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+            <div className='planContainer'>
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div>   
             <div className='practicePlanHeader'>
                 <h1>Your Hitting Charts</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
-            <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+            <div className='planContainer'>
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div>
             <div className='practicePlanHeader'>
                 <h1>Your Pitching Charts</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
-            <div>
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
-                <img src={PlaceHolder} alt="PlaceHolder" />
+            <div className='planContainer'>
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
             </div>  
         </div>
     );

@@ -53,7 +53,9 @@ function Navbar({ isLogged, handleLogout }) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-        <MenuItem onClick={handleClose} component={Link} to="/my-dashboard" sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>My Dashboard</MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/my-account" sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>My Dashboard</MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/account-settings" sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>Settings</MenuItem>
+          <MenuItem onClick={handleClose} component={Link} to="/my-groups" sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>My Groups</MenuItem>
           <MenuItem onClick={logout} sx={{ fontWeight: 700, fontFamily: 'Inter, sans-serif' }}>Logout</MenuItem>
         </Menu>
       </div>

@@ -34,8 +34,9 @@ function BrowseGamePlans() {
                     <ToggleButton value="createResource">Create Resource +</ToggleButton>
                 </ToggleButtonGroup>
             </div>
-            <div className='practicePlanHeader'>
+            <div className='practicePlanHeaders'>
                 <h1>Most Downloaded</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />
@@ -43,8 +44,9 @@ function BrowseGamePlans() {
                 <img src={PlaceHolder} alt="PlaceHolder" />
                 <img src={PlaceHolder} alt="PlaceHolder" />
             </div>   
-            <div className='practicePlanHeader'>
+            <div className='practicePlanHeaders'>
                 <h1>Practice Plans</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />
@@ -52,8 +54,9 @@ function BrowseGamePlans() {
                 <img src={PlaceHolder} alt="PlaceHolder" />
                 <img src={PlaceHolder} alt="PlaceHolder" />
             </div>
-            <div className='practicePlanHeader'>
+            <div className='practicePlanHeaders'>
                 <h1>Pitching Charts</h1>
+                <button className='seeAllButton'>See All</button>
             </div> 
             <div>
                 <img src={PlaceHolder} alt="PlaceHolder" />

@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import './TagLineBox.css';
-import PlaceHolder from '../Assets/Photos/ImagePlaceholder.png';
 import practicePlanHolder from '../Assets/Photos/practicePlanHolder.png';
-import sheetsPractice from '../Assets/Photos/sheetsPlanHolder.png';
 
 
 function TagLineBox() {
@@ -41,15 +39,15 @@ function TagLineBox() {
             </div>
             <div className='mostDownloadedPlans'>
               <div>
-                <img src={sheetsPractice} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
                 <p className="imgCaption">Uploaded By @adinkel3</p>
               </div>
               <div>
-                <img src={sheetsPractice} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
                 <p className="imgCaption">Created By @CoachSheets3</p>
               </div>
               <div>
-                <img src={sheetsPractice} alt="PlaceHolder" />
+                <img src={practicePlanHolder} alt="PlaceHolder" />
                 <p className="imgCaption">Uploaded By @CoachReel17</p>
               </div>
             </div>

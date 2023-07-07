@@ -4,11 +4,12 @@
     padding-top: 20px;
 }
 
-.practicePlanHeader{
-    color: #025464;
+.practicePlanHeaders{
+    color: #232B2B;
     display: flex;
-    flex-direction: column;
-    max-width: 900px;
+    align-items: center;
     font-family: 'Inter', sans-serif;
-    margin-left: 20px;
+}
+.practicePlanHeaders h1 {
+    margin-right: 20px;
 }
